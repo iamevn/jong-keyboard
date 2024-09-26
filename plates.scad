@@ -33,7 +33,7 @@ top_offset = mid_offset + mid_thickness + smidge;
 screw_inset = 2.75;
 
 module AllTogether() {
-  spread = 30;
+  spread = 0;
   color("darkred", alpha) Base();
   translate([0, 0, 1*spread]) color("red", alpha) Plate();
   translate([0, 0, 2*spread]) color("teal", alpha) Mid();
