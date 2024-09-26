@@ -1,6 +1,6 @@
 // from https://github.com/pastcompute/openscad-rpipico-rfm69-container
 
-module pico() { translate([ 0, 0, 0.5 ]) rotate(a = [ 90, 0, 90 ]) import("Unnamed-Raspberry\ Pi\ Pico-R004.amf", convexity = 3); }
+module pico() { translate([ 0, 0, 0.5 ]) rotate(a = [ 90, 0, 90 ]) import("res/Unnamed-Raspberry\ Pi\ Pico-R004.amf", convexity = 3); }
 
 module pico_screws(h=4) {
   zoff = -h/2;

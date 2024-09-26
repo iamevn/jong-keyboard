@@ -63,7 +63,7 @@ module Layer(file, z_offset, thickness) {
 
 module Base() {
   difference() {
-    Layer("18.5 base.dxf", base_offset, base_thickness);
+    Layer("res/18.5 base.dxf", base_offset, base_thickness);
     ScrewHoles(screw_inset);
     SidePanel(side_panel_width, side_panel_x, side_panel_y);
   }
@@ -79,7 +79,7 @@ module PositionedPi(screw_h=4, just_screws=false) {
 
 module Plate() {
   difference() {
-    Layer("18.5 plate.dxf", plate_offset, plate_thickness);
+    Layer("res/18.5 plate.dxf", plate_offset, plate_thickness);
     ScrewHoles(screw_inset);
     SidePanel(side_panel_width, side_panel_x, side_panel_y);
     translate([0, 0, 3]) PositionedPi(just_screws=true);
@@ -88,7 +88,7 @@ module Plate() {
 
 module Top() {
   difference() {
-    Layer("18.5 top.dxf", top_offset, top_thickness);
+    Layer("res/18.5 top.dxf", top_offset, top_thickness);
     ScrewHoles(screw_inset);
 //    SidePanel(side_panel_width, side_panel_x, side_panel_y);
   }
@@ -96,7 +96,7 @@ module Top() {
 
 module Mid() {
   difference() {
-    Layer("18.5 top.dxf", mid_offset, mid_thickness);
+    Layer("res/18.5 top.dxf", mid_offset, mid_thickness);
     ScrewHoles(screw_inset);
     SidePanel(side_panel_width, side_panel_x, side_panel_y);
 linear_extrude(height=100) offset(r=3) projection() hull() translate([0, 0, 5]) PositionedPi(just_screws=true);
