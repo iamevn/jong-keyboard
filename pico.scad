@@ -2,9 +2,8 @@
 
 module pico() { translate([ 0, 0, 0.5 ]) rotate(a = [ 90, 0, 90 ]) import("res/Unnamed-Raspberry\ Pi\ Pico-R004.amf", convexity = 3); }
 
-module pico_screws(h=4) {
+module pico_screws(h=4, d=2.1) {
   zoff = -h/2;
-  d = 2.1;
   spacing_short = 11.4;
   spacing_long = 47;
   $fn = 30;

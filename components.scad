@@ -1,4 +1,4 @@
-module SlideSwitch(just_cutouts=false) {
+module SlideSwitch(just_cutouts=false, screw_d=2.5) {
   plate_w = 19.5;
   plate_h = 5.8;
   plate_d = 0.4;
@@ -7,9 +7,8 @@ module SlideSwitch(just_cutouts=false) {
   box_w = 10.7;
   swh = 3.5;
   sww = 6.5;
-  holed = 2.5;
   between_holes = 12.7;
-  between_hole_centers = between_holes + holed;
+  between_hole_centers = between_holes + screw_d;
   lugd = 3;
   lugw = 1.4;
   lugh = 0.4;
@@ -25,8 +24,8 @@ module SlideSwitch(just_cutouts=false) {
   
   module SSCutout() {
     translate([0, 0, depth]) cube([sww, swh, depth], center=true);
-    translate([-between_hole_centers/2, 0, depth]) cylinder(depth, d=holed, center=true);
-    translate([between_hole_centers/2, 0, depth]) cylinder(depth, d=holed, center=true);
+    translate([-between_hole_centers/2, 0, depth]) cylinder(depth, d=screw_d, center=true);
+    translate([between_hole_centers/2, 0, depth]) cylinder(depth, d=screw_d, center=true);
   }
   
   module SSLugs() {
@@ -70,7 +69,7 @@ module SlideSwitch(just_cutouts=false) {
   }
 }
 
-module UsbSocket(just_cutouts=false) {
+module UsbSocket(just_cutouts=false, screw_d=3) {
   capsule_width = 25;
   capsule_height = 5.15;
   capsule_depth = 8.2;
@@ -126,7 +125,6 @@ module UsbSocket(just_cutouts=false) {
       }
     }
     module Screws() {
-      screw_d = 3;
       screw_spread = 13.4/2+screw_d/2;
       translate([screw_spread, 0, 0])
         cylinder(cutout_h, d=screw_d, center=true);
