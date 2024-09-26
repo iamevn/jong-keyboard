@@ -139,7 +139,7 @@ module SidePanel(width, x, y, show_components=false) {
 }
 
 module ScrewHoles(inset) {
-  height = base_thickness + open_thickness + plate_thickness + side_thickness + (10*smidge);
+  height = base_thickness + open_thickness + plate_thickness + mid_thickness + top_thickness + (12*smidge);
   z_offset = -5 * smidge;
   d=2.5;
   r=d/2;
